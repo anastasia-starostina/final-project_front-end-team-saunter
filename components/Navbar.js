@@ -1,18 +1,50 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import styles from "../styles/Navbar.module.css"
+import Link from "next/link";
+import Image from "next/image";
+import React, { useState } from "react";
+import NavItem from "./Expnavbar";
+import styles from "../styles/Navbar.module.css";
 
+const MENU_LIST = [
+  { text: "Home", href: "/" },
+  { text: "About Us", href: "/about" },
+  { text: "Contact", href: "/contact" },
+];
 const Navbar = () => {
+  const [navActive, setNavActive] = useState(null);
+  const [activeIdx, setActiveIdx] = useState(-1);
+
   return (
-    <nav className={styles.navbar}>
-      <Link href="/"><h2>Saunter</h2></Link>
-      <Link href="/"><a>Home</a></Link>
-      <Link href="/about"><a>About</a></Link>
-      <Link href="/community/"><a>Community</a></Link>
-      <Link href="/contact/"><a>Contact</a></Link>
-      <button className="btn" href="/login/">Login</button>
-    </nav>
+    <header>
+      <nav className={`nav`}>
+        <Link href="/">
+          <a>
+            <h1 className="logo">CodeWithMarish</h1>
+          </a>
+        </Link>
+        <div
+          onClick={() => setNavActive(!navActive)}
+          className={`nav__menu-bar`}
+        >
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div className={`${navActive ? "active" : ""} nav__menu-list`}>
+          {MENU_LIST.map((menu, idx) => (
+            <div
+              onClick={() => {
+                setActiveIdx(idx);
+                setNavActive(false);
+              }}
+              key={menu.text}
+            >
+              <NavItem active={activeIdx === idx} {...menu} />
+            </div>
+          ))}
+        </div>
+      </nav>
+    </header>
   );
-}
- 
+};
+
 export default Navbar;
