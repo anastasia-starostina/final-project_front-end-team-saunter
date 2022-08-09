@@ -224,8 +224,11 @@ function addToCart(activity) {
 							<Card key={index} title={activity.name} image={activity.image} patch={function () {return patchSaved(activity.id)}} add={function() {return addToCart(activity)}}/>
 						))}
 					</Carousel>
+      <div className={styles.cart}>
+      <p>{cart.length}</p>
+      <button className={styles.dayplanbtn}>View Day Plan</button>
+      </div>
 			</div>
-
 			{/* chakra ui imported below */}
       <div className="form">
         <ChakraProvider>

@@ -79,6 +79,21 @@
 
  }
 
+.dayplanbtn {
+    width: max-content;
+    display: inline-block;
+    background-color: var(--color-secondary);
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 2px solid var(--color-primary);
+    transition: var(--transition);
+    margin: 1.5rem 1.5rem;
+    box-shadow: 4px 4px black;
+    font-family: "Quicksand";
+    font-weight: bold;
+}
+
 /*
 CAROUSEL STYLING
 */
