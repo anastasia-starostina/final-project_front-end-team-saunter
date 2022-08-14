@@ -73,15 +73,15 @@ const Members = () => {
 	const LikedCard = ({ name, type, description, image }) => {
 		return (
 			<div className={styles.liked_container}>
-				<div className={styles.image_container}>
-					<div>
+				<div className={styles.image_and_overlay_container}>
+					<div className={styles.image_container}>
 						<img src={image} alt={name} />
 					</div>
-					<h1>{name}</h1>
-					<div className={styles.image_overlay}>
+					<div className={styles.overlay}>
 						<h2>{type}</h2>
 						<p>{description}</p>
 					</div>
+					<h1>{name}</h1>
 				</div>
 
 				{/* On hover should display description */}
