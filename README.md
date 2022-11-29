@@ -67,7 +67,7 @@ Day plans can be created with or without logging in, but if the user chooses to 
 
 ## Front-End
 
-View our deployed front-end here: https://final-project-front-end-team-saunter.vercel.app/
+View our deployed front-end here: https://saunter-frontend.vercel.app/
 
 To run the front-end locally follow the steps below:
 
