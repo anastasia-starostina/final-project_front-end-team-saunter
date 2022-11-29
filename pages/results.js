@@ -52,14 +52,14 @@ export default function Results() {
 
 	//SAVE BUTTON FUNCTIONALITY
 	async function patchSaved(input) {
-		await fetch(`https://saunter-db.herokuapp.com/all-budgets`, {
-			method: 'PATCH',
-			headers: {
-				'Content-Type': 'application/json',
-				'Access-Control-Request-Method': 'PATCH',
-			},
-			body: JSON.stringify(input),
-		})
+		await fetch(`https://saunter-db-p2f8.onrender.com/all-budgets`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Request-Method": "PATCH",
+      },
+      body: JSON.stringify(input),
+    });
 	}
 
 	// UPDATE FORM DATA FUNCTIONALITY
@@ -67,8 +67,8 @@ export default function Results() {
 	useEffect(() => {
 		const getData = async () => {
 			const response = await axios.get(
-				`https://saunter-db.herokuapp.com/all-budgets`
-			)
+        `https://saunter-db-p2f8.onrender.com/all-budgets`
+      );
 			let allActivities = response.data.data
 			console.log('allActivities', allActivities)
 			console.log('query', router.query)

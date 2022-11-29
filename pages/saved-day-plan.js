@@ -19,8 +19,8 @@ export default function DayPlan() {
 	useEffect(() => {
 		const getData = async () => {
 			const response = await axios.get(
-				`https://saunter-db.herokuapp.com/all-budgets`
-			)
+        `https://saunter-db-p2f8.onrender.com/all-budgets`
+      );
 			let allActivities = response.data.data
 			let filteredActivities = []
 			const queryIDs = query.split(',')

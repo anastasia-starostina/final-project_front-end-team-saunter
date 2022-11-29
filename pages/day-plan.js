@@ -23,22 +23,25 @@ export default function DayPlan() {
 
 
 	const postDayplan = async (input) => {
-		const response = await fetch(`https://saunter-db.herokuapp.com/dayplans`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				'Access-Control-Request-Method': 'POST',
-			},
-			body: JSON.stringify(input),
-		})
+		const response = await fetch(
+      `https://saunter-db-p2f8.onrender.com/dayplans`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Request-Method": "POST",
+        },
+        body: JSON.stringify(input),
+      }
+    );
 	}
 
 
 	useEffect(() => {
 		const getData = async () => {
 			const response = await axios.get(
-				`https://saunter-db.herokuapp.com/all-budgets`
-			)
+        `https://saunter-db-p2f8.onrender.com/all-budgets`
+      );
 			let allActivities = response.data.data
 			let filteredActivities = []
 			for (let i = 0; i < cart.length; i++) {
