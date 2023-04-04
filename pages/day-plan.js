@@ -3,11 +3,9 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios'
-import Image from 'next/image'
 import { FiMapPin } from 'react-icons/fi'
 import { IconContext } from 'react-icons'
 import { useUser } from '@auth0/nextjs-auth0'
-import Link from 'next/link'
 
 export default function DayPlan() {
 	//Auth0 start
@@ -24,7 +22,7 @@ export default function DayPlan() {
 
 	const postDayplan = async (input) => {
 		const response = await fetch(
-      `https://saunter-db-p2f8.onrender.com/dayplans`,
+      `https://saunter-server.onrender.com/dayplans`,
       {
         method: "POST",
         headers: {
@@ -40,7 +38,7 @@ export default function DayPlan() {
 	useEffect(() => {
 		const getData = async () => {
 			const response = await axios.get(
-        `https://saunter-db-p2f8.onrender.com/all-budgets`
+        `https://saunter-server.onrender.com/all-budgets`
       );
 			let allActivities = response.data.data
 			let filteredActivities = []

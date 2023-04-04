@@ -48,11 +48,7 @@ export default function GetStarted() {
 				className={styles.pagetwoimg}
 				src={page2image}
 				alt='inputpage image'
-				// height={60}
-				// width={50}
 				style={{ transform: 'rotate(-13.23deg)' }}
-				// layout="raw"
-				// width={{ md: 40 }}
 			/>
 			<Image
 				className={styles.pagetwoimg2}

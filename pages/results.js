@@ -52,7 +52,7 @@ export default function Results() {
 
 	//SAVE BUTTON FUNCTIONALITY
 	async function patchSaved(input) {
-		await fetch(`https://saunter-db-p2f8.onrender.com/all-budgets`, {
+		await fetch(`https://saunter-server.onrender.com/all-budgets`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +67,7 @@ export default function Results() {
 	useEffect(() => {
 		const getData = async () => {
 			const response = await axios.get(
-        `https://saunter-db-p2f8.onrender.com/all-budgets`
+        `https://saunter-server.onrender.com/all-budgets`
       );
 			let allActivities = response.data.data
 			console.log('allActivities', allActivities)
